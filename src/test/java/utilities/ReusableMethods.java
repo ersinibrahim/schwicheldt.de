@@ -174,30 +174,49 @@ public class ReusableMethods {
 
         WebElement obj;
         WebElement dropDown;
+        int j=0;
 
         for (int i = 0; i < elements.size(); i++) {
             obj = elements.get(i);
             waitUntilClickable(obj, 10);
             String elementText = obj.getText().replaceAll("[^a-zA-Z]+", "");
+            clickWithTimeOut(obj,10);
 
-            for (int j = 0; j < dropDowns.size(); j++){
-                dropDown=dropDowns.get(j);
-                hoverOverElement(obj);
-                waitUntilVisible(dropDown,10);
+            if(j<dropDowns.size()) {
+                dropDown = dropDowns.get(j);
+                waitUntilVisible(dropDown, 10);
+                j++;
+            }
+
             }
 
         }
 
 
 
+
+    public void carouselIconIsClickable(WebElement icon) {
+
+        waitUntilClickable(icon, 10);
+        clickWithTimeOut(icon, 10);
     }
 
-    public void carouselIconIsClickable(WebElement icon){
 
-        waitUntilClickable(icon,10);
-        clickWithTimeOut(icon,10);
+    public void elementsIsClickable(List<WebElement> elements, List<WebElement> main_elements) {
+
+        for (WebElement element : main_elements) {
+
+
+            for (WebElement obj : elements) {
+
+                waitUntilClickable(obj, 10);
+                clickWithTimeOut(obj, 10);
+                Driver.getDriver().navigate().forward();
+                clickWithTimeOut(element, 10);
+
+
+            }
+        }
     }
-
-
 
 }

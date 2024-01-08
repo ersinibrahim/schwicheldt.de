@@ -20,13 +20,13 @@ public class Elements_Homepage extends ReusableMethods {
     @FindBy(xpath = "//div[@id='navbarScroll']/ul/li")
     private List<WebElement> homePage_Elements;
 
-    @FindBy(className = "dropdown-menu bg-warning")
+    @FindBy(css = "ul[class*='dropdown-menu bg-warning']")
     private List<WebElement> elements_HomePage_dropDownsMenus;
 
-    @FindBy(className = "carousel-control-next-icon")
+    @FindBy(css = "span[class*='carousel-control-next-icon']")
     private WebElement carouselControlNextIcon_HomePage;
 
-    @FindBy(className = "carousel-control-prev-icon")
+    @FindBy(css = "span[class*='carousel-control-prev-icon']")
     private WebElement carouselControlPrevIcon_HomePage;
 
     // Getter methods for accessing elements

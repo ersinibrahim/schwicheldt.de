@@ -19,14 +19,7 @@ public class Elements_HomePage_StepDefinitions {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("toUrl"));
 
-
-
         ReusableMethods.waitForPageToLoad(10);
-
-     for (WebElement obj : elementsHomepage.getHomePage_Elements()) {
-
-      System.out.println("obj = " + obj.getText());
-     }
 
 
     }
@@ -40,9 +33,9 @@ public class Elements_HomePage_StepDefinitions {
     @Then("Controlling the carousel icons")
     public void controlling_the_carousel_icons() {
 
-       elementsHomepage.carouselIconIsClickable(elementsHomepage.getCarouselControlNextIcon_HomePage());
-       elementsHomepage.carouselIconIsClickable(elementsHomepage.getCarouselControlPrevIcon_HomePage());
-       Driver.closeDriver();
+        elementsHomepage.carouselIconIsClickable(elementsHomepage.getCarouselControlNextIcon_HomePage());
+        elementsHomepage.carouselIconIsClickable(elementsHomepage.getCarouselControlPrevIcon_HomePage());
+
 
     }
 
